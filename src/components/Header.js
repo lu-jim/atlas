@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
   <nav id="navbar" className="bg-white text-slate-500 font-serif flex justify-between p-6 text-center align-baseline">
