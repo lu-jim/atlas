@@ -17,6 +17,8 @@ const Dashboard = () => {
       stats[country.region][0] += country.area + 0;
       stats[country.region][1] += country.population + 0;
     }
+    stats.All[0] += country.area + 0;
+    stats.All[1] += country.population + 0;
   });
   const continentList = Object.keys(stats);
   console.log(stats);
