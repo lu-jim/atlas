@@ -14,9 +14,6 @@ const Header = () => (
         </li>
       </ul>
     </div>
-    <div className="flex mr-4 self-end tracking-wide">
-      <h1> Logo</h1>
-    </div>
   </nav>
 );
 

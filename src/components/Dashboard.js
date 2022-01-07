@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getStats } from '../redux/dashboard/dashboard';
+import ContinentCard from './ContinentCard';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -8,17 +9,25 @@ const Dashboard = () => {
   useEffect(() => {
     if (!statList.length) dispatch(getStats());
   }, []);
-  let area = 0;
-  let population = 0;
+  const stats = { All: [0, 0] }; // [Area, Population]
   statList.forEach((country) => {
-    if (country.region === 'Europe') {
-      console.log(country.name);
-      area += country.area;
-      population += country.population;
+    if (Object.keys(stats).indexOf(country.region) === -1) {
+      stats[country.region] = [country.area + 0, country.population + 0];
+    } else {
+      stats[country.region][0] += country.area + 0;
+      stats[country.region][1] += country.population + 0;
     }
   });
-  console.log(area, population);
-  return <div id="stat-list">Hi</div>;
+  const continentList = Object.keys(stats);
+  console.log(stats);
+  const list = continentList.map((continent) => (
+    <ContinentCard
+      key={stats[continent][0] + stats[continent][1]}
+      continent={continent}
+      area={stats[continent][0]}
+      population={stats[continent][1]}
+    />
+  ));
+  return <div id="stat-list">{list || ''}</div>;
 };
-
 export default Dashboard;
