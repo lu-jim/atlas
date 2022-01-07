@@ -30,6 +30,10 @@ const Dashboard = () => {
       population={stats[continent][1]}
     />
   ));
-  return <div id="stat-list">{list || ''}</div>;
+  return (
+    <div id="stat-list" className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-sky-900">
+      {list || ''}
+    </div>
+  );
 };
 export default Dashboard;

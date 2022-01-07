@@ -10,13 +10,15 @@ import Error from './components/Error';
 const App = () => (
   <Provider store={store}>
     <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/country/:country" element={<Country />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+      <div className="h-screen">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/country/:country" element={<Country />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </div>
     </Router>
   </Provider>
 );
