@@ -24,6 +24,9 @@ To get a local copy up and running follow these simple steps.
 - Type Enter to finish the installation process.
 - Run `npm i` and after all the dependencies are installed run `npm start`
 
+### Testing
+- Run `npm run test` at your command line inside the root folder of the project
+
 ## Demo
 - [Video here](https://www.loom.com/share/2390bf79bbd24507a6e1c1f6c424b2b3)
 - [Live demo](https://infallible-feynman-2e18dc.netlify.app)
