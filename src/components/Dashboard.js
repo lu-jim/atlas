@@ -28,6 +28,7 @@ const Dashboard = () => {
       continent={continent}
       area={stats[continent][0]}
       population={stats[continent][1]}
+      data={statList}
     />
   ));
   return (
