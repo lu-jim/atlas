@@ -10,7 +10,6 @@ const Country = () => {
       {countryData.languages[language]}
     </li>
   ));
-  console.log(langList);
   return (
     <div className="p-5 text-white">
       <h1 className="text-4xl bold">{country}</h1>
