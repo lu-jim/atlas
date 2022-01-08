@@ -21,17 +21,17 @@ const Dashboard = () => {
     stats.All[1] += country.population + 0;
   });
   const continentList = Object.keys(stats);
-  console.log(stats);
   const list = continentList.map((continent) => (
     <ContinentCard
-      key={stats[continent][0] + stats[continent][1]}
+      key={continentList.indexOf(continent)}
+      id={continentList.indexOf(continent)}
       continent={continent}
       area={stats[continent][0]}
       population={stats[continent][1]}
     />
   ));
   return (
-    <div id="stat-list" className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-sky-900">
+    <div id="dashboard" className="grid grid-cols-2 md:grid-cols-4 bg-sky-900">
       {list || ''}
     </div>
   );

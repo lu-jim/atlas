@@ -12,7 +12,6 @@ const Country = () => {
   }, []);
   let filtered = countryList.filter((match) => match.name === country)[0];
   if (!filtered) filtered = { official: '', area: '', population: '' };
-  console.log(filtered);
   return (
     <>
       <h1>{country}</h1>

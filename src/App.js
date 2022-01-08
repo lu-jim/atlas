@@ -6,17 +6,19 @@ import Dashboard from './components/Dashboard';
 import About from './components/About';
 import Country from './components/Country';
 import Error from './components/Error';
+import Continent from './components/Continent';
 
 const App = () => (
   <Provider store={store}>
     <Router>
-      <div className="h-screen">
+      <div className="h-screen bg-sky-900">
         <Header />
         <Routes>
-          <Route path="/" element={<Dashboard />} />
           <Route path="/about" element={<About />} />
           <Route path="/country/:country" element={<Country />} />
+          <Route path="/continent/:continent" element={<Continent />} />
           <Route path="*" element={<Error />} />
+          <Route path="/" element={<Dashboard />} />
         </Routes>
       </div>
     </Router>
