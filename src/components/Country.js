@@ -1,34 +1,36 @@
-import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getStats } from '../redux/dashboard/dashboard';
+import { useParams, useLocation } from 'react-router-dom';
 
 const Country = () => {
   const { country } = useParams();
-  const dispatch = useDispatch();
-  const countryList = useSelector((state) => state.dashboard.dashboard);
-  useEffect(() => {
-    if (!countryList.length) dispatch(getStats());
-  }, []);
-  let filtered = countryList.filter((match) => match.name === country)[0];
-  if (!filtered) filtered = { official: '', area: '', population: '' };
+  const data = useLocation();
+  const countryData = data.state;
+  const langList = Object.keys(countryData.languages);
+  const langNames = langList.map((language) => (
+    <li key={langList.indexOf(language)}>
+      {countryData.languages[language]}
+    </li>
+  ));
+  console.log(langList);
   return (
     <div className="p-5 text-white">
       <h1 className="text-4xl bold">{country}</h1>
       <h2>
-        {' '}
-        Official Name:
-        {filtered.official || ''}
+        Official Name:&nbsp;
+        {countryData.official || ''}
       </h2>
       <p>
-        Area:
-        {' '}
-        {filtered.area || ''}
-        Population:
-        {' '}
-        {filtered.population || ''}
+        Area:&nbsp;
+        {countryData.area || ''}
+        &nbsp;m²
+      </p>
+      {' '}
+      <p>
+        Population:&nbsp;
+        {countryData.population || ''}
+      </p>
+      <p>
         Languages:
-        {' '}
+        {langNames}
       </p>
     </div>
   );

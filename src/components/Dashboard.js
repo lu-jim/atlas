@@ -32,7 +32,7 @@ const Dashboard = () => {
     />
   ));
   return (
-    <div id="dashboard" className="grid grid-cols-2 md:grid-cols-4 bg-sky-900">
+    <div id="dashboard" className="grid grid-cols-2 md:grid-cols-3 bg-sky-900">
       {list || ''}
     </div>
   );
