@@ -13,8 +13,8 @@ const Country = () => {
   let filtered = countryList.filter((match) => match.name === country)[0];
   if (!filtered) filtered = { official: '', area: '', population: '' };
   return (
-    <>
-      <h1>{country}</h1>
+    <div className="p-5 text-white">
+      <h1 className="text-4xl bold">{country}</h1>
       <h2>
         {' '}
         Official Name:
@@ -30,7 +30,7 @@ const Country = () => {
         Languages:
         {' '}
       </p>
-    </>
+    </div>
   );
 };
 
