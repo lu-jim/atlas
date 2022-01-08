@@ -11,7 +11,7 @@ const Country = () => {
     </li>
   ));
   return (
-    <div className="p-5 text-white">
+    <div className="p-5 text-white bg-sky-700 h-50">
       <h1 className="text-4xl bold">{country}</h1>
       <h2>
         Official Name:&nbsp;
