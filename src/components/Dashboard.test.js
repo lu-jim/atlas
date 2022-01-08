@@ -3,7 +3,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import TestRenderer from 'react-test-renderer';
 import store from '../redux/configureStore';
-import * as dashboardSlice from '../redux/dashboard/dashboard';
 import Dashboard from './Dashboard';
 
 describe('App Rendering', () => {
