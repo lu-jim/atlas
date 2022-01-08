@@ -15,7 +15,6 @@ const App = () => (
         <Header />
         <Routes>
           <Route path="/about" element={<About />} />
-
           <Route path="/continent/:continent" element={<Continent />} />
           <Route path="/continent/:continent/:country" element={<Country />} />
           <Route path="*" element={<Error />} />
